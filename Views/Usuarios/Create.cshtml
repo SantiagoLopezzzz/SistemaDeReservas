@@ -1,0 +1,114 @@
+@model SistemaReservas.Models.Usuarios
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Usuarios</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="Documento" class="control-label"></label>
+                <input asp-for="Documento" class="form-control" />
+                <span asp-validation-for="Documento" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="NombreCompleto" class="control-label"></label>
+                <input asp-for="NombreCompleto" class="form-control" />
+                <span asp-validation-for="NombreCompleto" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="FechaNacimiento" class="control-label"></label>
+                <input asp-for="FechaNacimiento" class="form-control" />
+                <span asp-validation-for="FechaNacimiento" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Celular" class="control-label"></label>
+                <input asp-for="Celular" class="form-control" />
+                <span asp-validation-for="Celular" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Correo" class="control-label"></label>
+                <input asp-for="Correo" class="form-control" />
+                <span asp-validation-for="Correo" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Departamento" class="control-label"></label>
+                <input asp-for="Departamento" class="form-control" />
+                <span asp-validation-for="Departamento" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Municipio" class="control-label"></label>
+                <input asp-for="Municipio" class="form-control" />
+                <span asp-validation-for="Municipio" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Barrio" class="control-label"></label>
+                <input asp-for="Barrio" class="form-control" />
+                <span asp-validation-for="Barrio" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="DireccionResidencia" class="control-label"></label>
+                <input asp-for="DireccionResidencia" class="form-control" />
+                <span asp-validation-for="DireccionResidencia" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="TelefonoResidencia" class="control-label"></label>
+                <input asp-for="TelefonoResidencia" class="form-control" />
+                <span asp-validation-for="TelefonoResidencia" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="PreguntaSecreta" class="control-label"></label>
+                <input asp-for="PreguntaSecreta" class="form-control" />
+                <span asp-validation-for="PreguntaSecreta" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="RespuestaSecreta" class="control-label"></label>
+                <input asp-for="RespuestaSecreta" class="form-control" />
+                <span asp-validation-for="RespuestaSecreta" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="AutorizaCorreo" class="control-label"></label>
+                <input asp-for="AutorizaCorreo" class="form-check-input" />
+                <span asp-validation-for="AutorizaCorreo" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="AutorizaCelular" class="control-label"></label>
+                <input asp-for="AutorizaCelular" class="form-check-input" />
+                <span asp-validation-for="AutorizaCelular" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Passwordd" class="control-label"></label>
+                <input asp-for="Passwordd" class="form-control" type="password"/>
+                <span asp-validation-for="Passwordd" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

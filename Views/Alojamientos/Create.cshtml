@@ -1,0 +1,81 @@
+@model SistemaReservas.Models.Alojamientos
+
+@{
+    ViewData["Title"] = "Create";
+}
+<div class="container mt-4 mb-5">
+    
+    <div class="fodun-panel">
+        <div class="pb-5">
+        <h2 class="fodun-section-title">
+ 
+        </h2>
+
+
+<h1>Create</h1>
+
+<h4>Alojamientos</h4>
+<hr />
+<div class="row">
+    <div class="col-md-5">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="Nombre" class="control-label"></label>
+                <input asp-for="Nombre" class="form-control" />
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Capacidad" class="control-label"></label>
+                <input asp-for="Capacidad" class="form-control" />
+                <span asp-validation-for="Capacidad" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="TarifaDiaOrdinario" class="control-label"></label>
+                <input asp-for="TarifaDiaOrdinario" class="form-control" />
+                <span asp-validation-for="TarifaDiaOrdinario" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="TarifaDiaEspecial" class="control-label"></label>
+                <input asp-for="TarifaDiaEspecial" class="form-control" />
+                <span asp-validation-for="TarifaDiaEspecial" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Estado" class="control-label"></label>
+                <input asp-for="Estado" class="form-check-input" />
+                <span asp-validation-for="Estado" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <div class="form-group">
+                    <label asp-for="Sede" class="control-label"></label>
+                    <select asp-for="SedeId"
+                            asp-items="ViewBag.Sede"
+                            class="form-control">
+                        <option value="">Seleccione una sede</option>
+
+                    </select>
+
+                    <span asp-validation-for="SedeId"
+                          class="text-danger"></span>
+                </div>
+                <span asp-validation-for="SedeId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-fodun" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+	</div>
+

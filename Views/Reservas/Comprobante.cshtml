@@ -1,0 +1,102 @@
+﻿@model SistemaReservas.Models.Reservas
+
+@{
+    ViewData["Title"] = "Comprobante";
+}
+
+<div class="container mt-5">
+
+    <div class="card shadow-lg">
+
+        <div class="card-header bg-primary text-white">
+            <h2>Comprobante de Reserva</h2>
+        </div>
+
+        <div class="card-body">
+
+            <div class="row mb-3">
+
+                <div class="col-md-6">
+                    <h5>Información de la Reserva</h5>
+
+                    <p>
+                        <strong>Fecha de reserva:</strong>
+                        @Model.FechaReserva
+                    </p>
+
+                    <p>
+                        <strong>Estado:</strong>
+                        @(Model.Estado ? "Activa" : "Inactiva")
+                    </p>
+
+                    <p>
+                        <strong>Valor Total:</strong>
+                        $@Model.valorTotal
+                    </p>
+                </div>
+
+                <div class="col-md-6">
+
+                    <h5>Información del Alojamiento</h5>
+
+                    <p>
+                        <strong>Sede:</strong>
+                        @Model.Alojamiento.Sede.Nombre
+                    </p>
+
+                    <p>
+                        <strong>Habitación:</strong>
+                        @Model.Alojamiento.Nombre
+                    </p>
+
+                    <p>
+                        <strong>Capacidad:</strong>
+                        @Model.Alojamiento.Capacidad personas
+                    </p>
+
+                </div>
+
+            </div>
+
+            <hr />
+
+            <div class="row">
+
+                <div class="col-md-4">
+                    <strong>Fecha Llegada</strong>
+                    <p>@Model.FechaLLegada.ToShortDateString()</p>
+                </div>
+
+                <div class="col-md-4">
+                    <strong>Fecha Salida</strong>
+                    <p>@Model.FechaSalida.ToShortDateString()</p>
+                </div>
+
+                <div class="col-md-4">
+                    <strong>Número Personas</strong>
+                    <p>@Model.cantidadPersonas</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="card-footer text-end">
+
+            <button class="btn btn-success"
+                    onclick="window.print()">
+
+                Imprimir
+            </button>
+
+            <a asp-action="Index"
+               class="btn btn-fodun">
+
+                Volver
+            </a>
+
+        </div>
+
+    </div>
+
+</div>

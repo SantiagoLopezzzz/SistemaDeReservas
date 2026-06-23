@@ -1,0 +1,90 @@
+﻿@{
+    ViewData["Title"] = "Inicio";
+}
+
+<div class="container mt-5">
+
+    <div class="text-center mb-5">
+        <h1 class="display-4">
+            Sistema de Reservas
+        </h1>
+
+        <p class="lead">
+            Sedes recreativas y alojamientos
+        </p>
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-3">
+            <div class="card shadow text-center border-0 bg-primary text-white">
+                <div class="card-body">
+                    <h2>@ViewBag.TotalSedes</h2>
+                    <p>Total Sedes</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card shadow text-center border-0 bg-success text-white">
+                <div class="card-body">
+                    <h2>@ViewBag.TotalAlojamientos</h2>
+                    <p>Alojamientos</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card shadow text-center border-0 bg-warning text-dark">
+                <div class="card-body">
+                    <h2>@ViewBag.TotalReservas</h2>
+                    <p>Reservas</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card shadow text-center border-0 bg-danger text-white">
+                <div class="card-body">
+                    <h2>@ViewBag.ReservasActivas</h2>
+                    <p>Reservas Activas</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <hr class="my-5" />
+
+    <div class="row text-center">
+
+        <div class="col-md-4">
+            <a asp-controller="Sedes"
+               asp-action="Index"
+               class="btn btn-lg btn-primary w-100">
+
+                Ver Sedes
+            </a>
+        </div>
+
+        <div class="col-md-4">
+            <a asp-controller="Alojamientos"
+               asp-action="Index"
+               class="btn btn-lg btn-success w-100">
+
+                Ver Alojamientos
+            </a>
+        </div>
+
+        <div class="col-md-4">
+            <a asp-controller="Reservas"
+               asp-action="Index"
+               class="btn btn-lg btn-warning w-100">
+
+                Ver Reservas
+            </a>
+        </div>
+
+    </div>
+
+</div>

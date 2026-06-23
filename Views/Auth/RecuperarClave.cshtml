@@ -1,0 +1,75 @@
+﻿@{
+    ViewData["Title"] = "Recuperar Contraseña";
+}
+
+<div class="row justify-content-center mt-5">
+    <div class="col-md-5">
+        <div class="card shadow">
+            <div class="card-header text-white text-center py-3"
+                 style="background-color:#8B1A1A;">
+                <h4 class="mb-0">Recuperar Contraseña</h4>
+                <small>Sistema de Reservas FODUN</small>
+            </div>
+            <div class="card-body p-4">
+
+                @if (ViewBag.Exito != null)
+                {
+                    <div class="alert alert-success">
+                        <i class="bi bi-check-circle-fill me-2"></i>
+                        @ViewBag.Exito
+                    </div>
+                    <div class="text-center mt-3">
+                        <a asp-controller="Auth" asp-action="Login" class="btn btn-outline-secondary">
+                            Volver al Login
+                        </a>
+                    </div>
+                }
+                else
+                {
+                    @if (ViewBag.Error != null)
+                    {
+                        <div class="alert alert-danger">
+                            <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                            @ViewBag.Error
+                        </div>
+                    }
+
+                    <p class="text-muted mb-4">
+                        Ingresa tu número de documento y responde tu pregunta secreta.
+                        Te enviaremos una contraseña temporal a tu correo registrado.
+                    </p>
+
+                    <form method="post" asp-action="RecuperarClave" asp-controller="Auth">
+                        @Html.AntiForgeryToken()
+
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Número de Documento</label>
+                            <input type="text" name="documento" class="form-control"
+                                   placeholder="Ej: 12345678" required />
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label fw-semibold">Respuesta Secreta</label>
+                            <input type="text" name="respuestaSecreta" class="form-control"
+                                   placeholder="Tu respuesta a la pregunta secreta" required />
+                            <div class="form-text">
+                                La misma respuesta que registraste al crear tu cuenta.
+                            </div>
+                        </div>
+
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn text-white"
+                                    style="background-color:#8B1A1A;">
+                                Enviar Nueva Contraseña
+                            </button>
+                            <a asp-controller="Auth" asp-action="Login"
+                               class="btn btn-outline-secondary">
+                                Volver al Login
+                            </a>
+                        </div>
+                    </form>
+                }
+            </div>
+        </div>
+    </div>
+</div>

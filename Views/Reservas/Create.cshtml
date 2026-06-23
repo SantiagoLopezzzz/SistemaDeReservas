@@ -1,0 +1,96 @@
+@model SistemaReservas.Models.Reservas
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container mt-4">
+
+    <div class="fodun-panel">
+
+        <h2 class="fodun-section-title">
+            Habitaciones / Alojamientos
+        </h2>
+
+
+<h1>Create</h1>
+
+<h4>Reservas</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="FechaLLegada" class="control-label"></label>
+                <input asp-for="FechaLLegada" type="date" class="form-control" />
+                <span asp-validation-for="FechaLLegada" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="FechaSalida" class="control-label"></label>
+                <input asp-for="FechaSalida" type="date" class="form-control" />
+                <span asp-validation-for="FechaSalida" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="cantidadPersonas" class="control-label"></label>
+                <input asp-for="cantidadPersonas" class="form-control" />
+                <span asp-validation-for="cantidadPersonas" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Estado" class="control-label"></label>
+                <input asp-for="Estado" class="form-check-input" />
+                <span asp-validation-for="Estado" class="text-danger"></span>
+            </div>
+                    <div class="form-group mb-3">
+
+                        <label asp-for="TipoTarifa" class="control-label">
+                            Tipo de tarifa
+                        </label>
+
+                        <select asp-for="TipoTarifa" class="form-control">
+
+                            <option value="">Seleccione</option>
+
+                            <option value="1">
+                                Ordinaria
+                            </option>
+
+                            <option value="2">
+                                Especial
+                            </option>
+
+                        </select>
+
+                        <span asp-validation-for="TipoTarifa"
+                              class="text-danger">
+                        </span>
+
+                    </div>
+
+            <div class="form-group">
+                <label class="control-label">Alojamiento</label>
+
+                <input type="text"
+                       class="form-control"
+                       value="@ViewBag.NombreAlojamiento"
+                       readonly />
+
+                <input type="hidden" asp-for="AlojamientoId" />
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-fodun" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+</div>
+</div>

@@ -1,0 +1,133 @@
+@model IEnumerable<SistemaReservas.Models.Usuarios>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Documento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreCompleto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaNacimiento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Celular)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Correo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Departamento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Municipio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Barrio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DireccionResidencia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TelefonoResidencia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PreguntaSecreta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RespuestaSecreta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AutorizaCorreo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AutorizaCelular)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Passwordd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rol)
+            </th>
+            @if (User.IsInRole("Admin"))
+            {
+                <th>Acciones</th>
+            }
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(model => item.Documento)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.NombreCompleto)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.FechaNacimiento)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.Celular)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.Correo)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.Departamento)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.Municipio)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.Barrio)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.DireccionResidencia)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.TelefonoResidencia)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.PreguntaSecreta)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.RespuestaSecreta)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.AutorizaCorreo)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.AutorizaCelular)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.Passwordd)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.Rol)
+            </td>
+                @if (User.IsInRole("Admin"))
+                {
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+                }
+        </tr>
+}
+    </tbody>
+</table>

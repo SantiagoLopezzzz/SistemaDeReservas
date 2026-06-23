@@ -1,0 +1,379 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #f3f3f3;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.footer {
+    position: relative;
+    margin-top: auto;
+    width: 100%;
+    padding: 15px;
+    background-color: #f1f1f1;
+    text-align: center;
+}
+
+/* ---------------- HEADER ---------------- */
+.main-header {
+    background: #b30000;
+    padding: 15px 30px;
+    color: white;
+}
+
+/* Contenedor principal: logo + FODUN + recuadro */
+.header-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Logo */
+.logo-box img {
+    height: 80px;
+}
+
+/* Contenedor FODUN + recuadro */
+.header-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* FODUN grande */
+.logo-fodun {
+    font-size: 48px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+}
+
+/* Recuadro blanco con información */
+.info-box {
+    background: white;
+    color: #b30000;
+    padding: 15px 25px;
+    border-radius: 5px;
+    text-align: left;
+}
+
+    .info-box h2 {
+        margin: 0;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .info-box p {
+        margin: 0;
+        font-size: 14px;
+    }
+
+/* ---------------- MENÚ ---------------- */
+.header-nav {
+    background: white;
+    width: 100%;
+    display: flex;
+    border-bottom: 1px solid #ddd;
+    margin-top: 10px;
+
+    padding: 0;
+}
+
+.nav-container {
+    display: flex;
+    gap: 15px;
+    max-width: none;
+    padding: 5px 10px;
+}
+
+.header-nav a {
+    margin-right: 20px;
+    text-decoration: none;
+    color: #b30000;
+    font-weight: bold;
+}
+
+    .header-nav a:hover {
+        color: #ff4d4d;
+    }
+
+
+.layout-nav {
+    color: #b30000;
+    font-weight: bold;
+    front-size: 14px;
+}
+
+/* Contenedor de botones */
+.table-action {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 0;
+    padding: 10px 30px; /* igual que .header-nav */
+    background: white; /* igual que .header-nav */
+    border-bottom: 2px solid #ddd; /* igual que .header-nav */
+    width: 100%;
+}
+
+/* Si la tabla tiene margen superior de Bootstrap */
+.table {
+    display: block; /* para que no afecte al layout */
+    gap: 0; /* elimina cualquier espacio entre filas */
+    margin-top: 0 !important;
+}
+
+
+.button-nav {
+    background: white; /* fondo normal */
+    color: black; /* texto normal */
+    display: inline-flex; /* solo ocupa el tamaño del contenido */
+    padding: 5px 12px; /* ajusta el tamaño del botón */
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ddd; /* borde opcional */
+    border-radius: 4px; /* bordes redondeados */
+    width: auto; /* 🔥 asegura que no ocupe toda la franja */
+}
+
+    /* Hover */
+    .button-nav:hover {
+        background: red;
+        color: white;
+    }
+
+    /* Activo */
+    .button-nav.active {
+        background: red;
+        color: white;
+    }
+
+/* =========================
+   ESTILO GENERAL FODUN
+========================= */
+
+
+/* HEADER */
+
+.fodun-header {
+    background: linear-gradient(to right, #a00018, #d91f32);
+    padding: 20px;
+    color: white;
+}
+
+.fodun-title {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.fodun-subtitle {
+    font-size: 1rem;
+}
+
+/* NAV */
+
+.fodun-nav {
+    background-color: #e5e5e5;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 20px;
+}
+
+    .fodun-nav a {
+        color: #7a0014;
+        margin-right: 20px;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+        .fodun-nav a:hover {
+            color: #c1121f;
+        }
+
+/* PANEL PRINCIPAL */
+
+.fodun-panel {
+    background-color: white;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 80px;
+    min-height: auto;
+    overflow: hidden;
+}
+
+/* TITULOS */
+
+.fodun-section-title {
+    color: #a00018;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* TABS */
+
+.fodun-tabs {
+    display: flex;
+    border-bottom: 3px solid #a00018;
+    margin-bottom: 20px;
+}
+
+.fodun-tab {
+    padding: 12px 20px;
+    background-color: #efefef;
+    margin-right: 5px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    font-weight: bold;
+}
+
+    .fodun-tab.active {
+        background-color: #a00018;
+        color: white;
+    }
+
+/* TABLAS */
+
+.fodun-table {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+    .fodun-table thead {
+        background-color: #a00018;
+        color: white;
+    }
+
+    .fodun-table tbody tr:hover {
+        background-color: #f8f8f8;
+    }
+
+/* BOTONES */
+
+.btn-fodun {
+    background-color: #a00018;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 18px;
+    font-weight: bold;
+}
+
+    .btn-fodun:hover {
+        background-color: #c1121f;
+        color: white;
+    }
+
+/* CARDS */
+
+.fodun-card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid #eee;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+
+    .fodun-card:hover {
+        transform: translateY(-3px);
+    }
+
+/* BADGES */
+
+.badge-disponible {
+    background-color: #198754;
+}
+
+.badge-ocupado {
+    background-color: #dc3545;
+}
+
+/* =========================
+   TABLAS ESTILO FODUN
+========================= */
+
+.inventario-section {
+    background-color: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    padding: 2rem;
+    margin-bottom: 3rem;
+}
+
+    .inventario-section h2 {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #212529;
+    }
+
+.table-inventario {
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+    .table-inventario thead {
+        background: linear-gradient(to right, #a00018, #c1121f);
+        color: white;
+    }
+
+    .table-inventario th {
+        padding: 15px;
+        text-align: center;
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    .table-inventario td {
+        padding: 14px;
+        border-bottom: 1px solid #eee;
+        text-align: center;
+        vertical-align: middle;
+        font-size: 14px;
+    }
+
+    .table-inventario tbody tr {
+        transition: 0.2s;
+    }
+
+        .table-inventario tbody tr:hover {
+            background-color: #faf5f5;
+        }
+
+.btn-xs {
+    padding: 6px 12px;
+    font-size: 12px;
+    border-radius: 8px;
+}
+
+.btn-fodun {
+    background-color: #a00018;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 18px;
+    font-weight: bold;
+}
+
+    .btn-fodun:hover {
+        background-color: #c1121f;
+        color: white;
+    }
+
+.badge {
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+}

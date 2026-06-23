@@ -1,0 +1,53 @@
+﻿@model IEnumerable<SistemaReservas.Models.Reservas>
+
+@{
+    ViewData["Title"] = "Calendario";
+}
+<div class="container mt-4 mb-5">
+
+    <div class="fodun-panel">
+
+        <h2 class="fodun-section-title">
+            Calendario
+        </h2>
+
+
+<link href='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.css' rel='stylesheet' />
+
+<script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js'></script>
+
+<div id='calendar'></div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+    var calendarEl = document.getElementById('calendar');
+
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+
+    initialView: 'dayGridMonth',
+
+    locale: 'es',
+
+    events: [
+
+    @foreach (var item in Model)
+    {
+        <text>
+            {
+            title: 'Ocupado',
+            start: '@item.FechaLLegada.ToString("yyyy-MM-dd")',
+            end: '@item.FechaSalida.ToString("yyyy-MM-dd")'
+            },
+        </text>
+    }
+
+    ]
+    });
+
+    calendar.render();
+    });
+</script>
+
+</div>
+</div>

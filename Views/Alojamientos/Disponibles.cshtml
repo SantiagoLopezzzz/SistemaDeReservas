@@ -1,0 +1,26 @@
+﻿@model IEnumerable<SistemaReservas.Models.Alojamientos>
+
+<h2>Alojamientos disponibles</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Capacidad</th>
+            <th>Tarifa Ordinaria</th>
+            <th>Tarifa Especial</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Nombre</td>
+                <td>@item.Capacidad</td>
+                <td>@item.TarifaDiaOrdinario</td>
+                <td>@item.TarifaDiaEspecial</td>
+            </tr>
+        }
+    </tbody>
+</table>

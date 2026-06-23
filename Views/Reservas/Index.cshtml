@@ -1,0 +1,157 @@
+@model IEnumerable<SistemaReservas.Models.Reservas>
+
+@{
+    ViewData["Title"] = "Reservas";
+}
+
+<div class="container mt-4">
+
+    <div class="fodun-panel">
+
+        <!-- TÍTULO -->
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <div>
+                <h2 class="fodun-section-title mb-1">
+                    Gestión de Reservas
+                </h2>
+
+                <p class="text-muted mb-0">
+                    Administración de reservas realizadas
+                </p>
+            </div>
+
+        </div>
+
+        <!-- TABLA -->
+        <div class="table-responsive">
+
+            <table class="table fodun-table table-hover align-middle">
+
+                <thead>
+                    <tr>
+                        <th style="background-color:#a00018; color:white;">Fecha Reserva</th>
+                        <th style="background-color:#a00018; color:white;"> Fecha Llegada</th>
+                        <th style="background-color:#a00018; color:white;">Fecha Salida</th>
+                        <th style="background-color:#a00018; color:white;">Personas</th>
+                        <th style="background-color:#a00018; color:white;">Valor Total</th>
+                        <th style="background-color:#a00018; color:white;">Estado</th>
+                        <th style="background-color:#a00018; color:white;">Lugar</th>
+                        <th style="background-color:#a00018; color:white;">Comprobante</th>
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <th style="background-color:#a00018; color:white;">Acciones</th>
+                        }
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+
+                            <!-- FECHA RESERVA -->
+                            <td>
+                                @item.FechaReserva.ToString("dd/MM/yyyy")
+                            </td>
+
+                            <!-- FECHA LLEGADA -->
+                            <td>
+                                @item.FechaLLegada.ToString("dd/MM/yyyy")
+                            </td>
+
+                            <!-- FECHA SALIDA -->
+                            <td>
+                                @item.FechaSalida.ToString("dd/MM/yyyy")
+                            </td>
+
+                            <!-- PERSONAS -->
+                            <td>
+                                <span class="badge bg-dark">
+                                    @item.cantidadPersonas Personas
+                                </span>
+                            </td>
+
+                            <!-- VALOR -->
+                            <td>
+                                <strong>
+                                    $ @item.valorTotal
+                                </strong>
+                            </td>
+
+                            <!-- ESTADO -->
+                            <td>
+                                @if (item.Estado)
+                                {
+                                    <span class="badge bg-success">
+                                        Activa
+                                    </span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-danger">
+                                        Inactiva
+                                    </span>
+                                }
+                            </td>
+
+                            <!-- LUGAR -->
+                            <td>
+                                <strong>
+                                    @item.Alojamiento.Sede.Nombre
+                                </strong>
+                            </td>
+
+                            <!-- COMPROBANTE -->
+                            <td>
+                                <a asp-action="Comprobante"
+                                   asp-route-id="@item.Id"
+                                   class="btn btn-sm btn-fodun">
+
+                                    Ver comprobante
+                                </a>
+                            </td>
+
+                            <!-- ACCIONES -->
+                            <td>
+                                @if (User.IsInRole("Admin"))
+                                {
+                                    <div class="d-flex gap-1 flex-wrap">
+
+                                        <a asp-action="Edit"
+                                        asp-route-id="@item.Id"
+                                        class="btn btn-sm btn-warning">
+
+                                            Editar
+                                        </a>
+
+                                        <a asp-action="Details"
+                                        asp-route-id="@item.Id"
+                                        class="btn btn-sm btn-info text-white">
+
+                                            Detalles
+                                        </a>
+
+                                        <a asp-action="Delete"
+                                        asp-route-id="@item.Id"
+                                        class="btn btn-sm btn-danger">
+
+                                            Eliminar
+                                        </a>
+
+                                    </div>
+                                }
+                            </td>
+
+                        </tr>
+                    }
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
