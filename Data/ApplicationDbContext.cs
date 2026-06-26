@@ -18,5 +18,6 @@ namespace SistemaReservas.Data
         public DbSet<Usuarios> Usuarios { get; set; }
 
         public DbSet<Reservas> Reservas { get; set; }
+        
     }
 }
