@@ -198,7 +198,7 @@ public class AlojamientosController : Controller
     }
 
 
-    //SP
+    //SP Ejem
     public async Task<IActionResult> Disponibles(
         DateTime fechaLlegada,
         DateTime fechaSalida)
